@@ -1,4 +1,7 @@
+# Simple dice game where if you roll a 7 or doubles, you win, otherwise, you lose.
+
 import random
+
 dice1 = random.randint(1, 8)
 dice2 = random.randint(1, 8)
 print(dice1)
