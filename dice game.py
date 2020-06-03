@@ -1,14 +1,27 @@
-# Simple dice game where if you roll a 7 or doubles, you win, otherwise, you lose.
-
 import random
 
-dice1 = random.randint(1, 8)
-dice2 = random.randint(1, 8)
-print(dice1)
-print(dice2)
-if dice1 + dice2 == 7:
-    print("Winner!!!")
-elif dice1 == dice2:
-    print("Winner!!!")
-else:
-    print("You Lose")
+
+def roll_dice():
+    x = random.randint(1, 8)
+    y = random.randint(1, 8)
+    print(x, y)
+    dice_game(x, y)
+
+
+def dice_game(x, y):
+    if x + y == 7 or x == y:
+        print("Winner!!!")
+        play_again()
+    else:
+        print("You Lose")
+        play_again()
+
+
+def play_again():
+    choice = input("Type in   y   to play again, and any key to quit:  ")
+    if choice == "y":
+        roll_dice()
+    else:
+        print("Thank you for playing")
+
+roll_dice()
